@@ -5,7 +5,7 @@ wtft is a simple command line tool that helps you figure out what the real file 
 ## Build and Run
 pre-requisites: go 1.19 or higher
 
-To build the cli: `make build-cli` or `go build -o wtft ./main.go`
+To build the cli: `make build-cli` or `go build -o wtft ./main.go`. [Here is a guide](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04) to output to other platforms
 
 Example usage:
 
