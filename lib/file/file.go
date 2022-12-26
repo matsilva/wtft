@@ -31,5 +31,5 @@ func GetFileSignature(header []byte) (*Signature, error) {
 			return &sig, nil
 		}
 	}
-	return nil, errors.New("No file type could be found for file. File may be corrupt.")
+	return nil, errors.New("No file type could be found for file. File may be corrupt or signature does not exist in wtft codebase yet...")
 }

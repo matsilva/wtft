@@ -1,9 +1,7 @@
 package cmd
 
 import (
-	"errors"
 	"fmt"
-	"os"
 
 	"github.com/matsilva/wtft/lib/file"
 	"github.com/matsilva/wtft/lib/helpers"
@@ -16,10 +14,9 @@ var rootCmd = &cobra.Command{
 	Short: "wtft is a CLI for determing what a file's real type is.",
 	Long:  `wtft is a CLI for determing what a file's real type is.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		if !validators.IsValidFile(filePath) {
-			helpers.ExitWithError(errors.New("File does not exist"))
-			fmt.Println("File does not exist")
-			os.Exit(1)
+		err := validators.CheckPrerequisites(filePath, outputType)
+		if err != nil {
+			helpers.ExitWithError(err)
 		}
 
 		header, err := file.GetFileHeader(filePath)
@@ -32,12 +29,20 @@ var rootCmd = &cobra.Command{
 			helpers.ExitWithError(err)
 		}
 
-		json, err := helpers.ToJSON(sig)
-		if err != nil {
-			helpers.ExitWithError(err)
+		switch outputType {
+		case "json":
+			out, err := helpers.ToJSON(sig)
+			if err != nil {
+				helpers.ExitWithError(err)
+			}
+			fmt.Println(string(out))
+		case "yaml":
+			out, err := helpers.ToYAML(sig)
+			if err != nil {
+				helpers.ExitWithError(err)
+			}
+			fmt.Println(string(out))
 		}
-
-		fmt.Println(string(json))
 	},
 }
 

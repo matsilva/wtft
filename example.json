@@ -1,0 +1,9 @@
+{
+    "name": "PNG",
+    "header_seq": "iVBORw0KGgo=",
+    "ext": "png",
+    "mime_type": "image/png",
+    "supported_extensions": [
+        "png"
+    ]
+}
