@@ -7,6 +7,9 @@ import (
 
 // CLI validations
 func CheckPrerequisites(file, outputType string) error {
+	if file == "" {
+		return errors.New("File is required")
+	}
 	if !IsValidFile(file) {
 		return errors.New("File does not exist")
 	}
