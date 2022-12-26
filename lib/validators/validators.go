@@ -6,6 +6,8 @@ import (
 )
 
 // CLI validations
+
+// CheckPrerequisites checks if the CLI arguments are valid
 func CheckPrerequisites(file, outputType string) error {
 	if file == "" {
 		return errors.New("File is required")
@@ -19,7 +21,7 @@ func CheckPrerequisites(file, outputType string) error {
 	return nil
 }
 
-// CLI argument validations
+// IsValidOutputType checks if the output type is valid
 func IsValidOutputType(outputType string) bool {
 	return outputType == "json" || outputType == "yaml"
 }
@@ -32,6 +34,7 @@ func IsValidFile(path string) bool {
 	return err == nil
 }
 
+// IsNotDirectory checks if a path is not a directory
 func IsNotDirectory(path string) bool {
 	fileInfo, err := os.Stat(path)
 	if err != nil {

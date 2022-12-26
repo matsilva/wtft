@@ -22,6 +22,7 @@ func GetFileHeader(path string) ([]byte, error) {
 	return buff[:HeaderLength], nil
 }
 
+// GetFileSignature returns the signature of a file for a given file header
 func GetFileSignature(header []byte) (*Signature, error) {
 	for _, sig := range Signatures {
 		for i, b := range sig.HeaderSeq {
