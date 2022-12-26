@@ -9,7 +9,7 @@ To build the cli: `make build-cli` or `go build -o wtft ./main.go`. [Here is a g
 
 Example usage:
 
-`wtft -file /path/to/png/file.png` will output the following json:
+`wtft -f /path/to/png/file.png` will output the following json:
 ```
 {
     "name": "PNG",
@@ -23,7 +23,7 @@ Example usage:
 
 Example error: 
 ```
-$ wtft -file /path/to/unknown/file
+$ wtft -f /path/to/unknown/file
 No file type could be found for file. File may be corrupt or signature does not exist in wtft codebase yet...
 ```
 All errors will exit with code 1
