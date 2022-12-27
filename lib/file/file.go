@@ -2,6 +2,7 @@ package file
 
 import (
 	"errors"
+	"fmt"
 	"io"
 	"os"
 )
@@ -25,10 +26,15 @@ func GetFileHeader(path string) ([]byte, error) {
 // GetFileSignature returns the signature of a file for a given file header
 func GetFileSignature(header []byte) (*Signature, error) {
 	for _, sig := range Signatures {
+		match := true
 		for i, b := range sig.HeaderSeq {
+			fmt.Println(b, header[i], b == header[i])
 			if b != header[i] {
+				match = false
 				break
 			}
+		}
+		if match {
 			return &sig, nil
 		}
 	}
