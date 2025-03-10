@@ -1,11 +1,11 @@
-package cmd
+package wtft
 
 import (
 	"fmt"
 
-	"github.com/matsilva/wtft/lib/file"
-	"github.com/matsilva/wtft/lib/helpers"
-	"github.com/matsilva/wtft/lib/validators"
+	"github.com/matsilva/wtft/internal/file"
+	"github.com/matsilva/wtft/internal/helpers"
+	"github.com/matsilva/wtft/internal/validators"
 	"github.com/spf13/cobra"
 )
 

@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/matsilva/wtft/cmd"
+	"github.com/matsilva/wtft"
 )
 
 func main() {
-	if err := cmd.Execute(); err != nil {
+	if err := wtft.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}

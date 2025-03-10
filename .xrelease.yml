@@ -1,0 +1,28 @@
+version: 1
+release:
+  # Branch configuration
+  branch: main
+
+  # Version bump type
+  defaultBump: patch
+
+  # Changelog configuration
+  changelog:
+    enabled: true
+    template: conventional
+
+  # Pre-release checks
+  checks:
+    - type: build
+      command: 'make build-all'
+
+  # Release actions actions
+  actions:
+    - type: git-tag
+    - type: commit-push
+    - type: github-release
+      assets:
+        - 'out/wtft_linux_64'
+        - 'out/wtft_mac'
+        - 'out/wtft_unix'
+        - 'out/wtft.exe'

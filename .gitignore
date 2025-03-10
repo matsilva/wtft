@@ -1,5 +1,4 @@
 # Binaries for programs and plugins
-wtft
 *.exe
 *.exe~
 *.dll
@@ -14,3 +13,6 @@ wtft
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+node_modules/
+
+out
