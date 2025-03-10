@@ -3,6 +3,7 @@
 wtft is a simple command line tool that helps you figure out what the real file type is. It does this by looking at the file's magic number and comparing it to a list of known magic numbers. 
 
 [![Go](https://github.com/matsilva/wtft/actions/workflows/go.yml/badge.svg)](https://github.com/matsilva/wtft/actions/workflows/go.yml)
+[![Release: Automated with xrelease](https://img.shields.io/badge/Release-Automated%20with%20xrelease-blueviolet?logo=github&logoColor=white)](https://github.com/matsilva/xrelease)
 
 ## Build and Run
 pre-requisites: go 1.19 or higher
