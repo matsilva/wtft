@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/matsilva/wtft/lib/file"
+	"github.com/matsilva/wtft/internal/file"
 )
 
 // TestGetFileHeader tests the GetFileHeader function.
